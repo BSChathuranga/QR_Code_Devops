@@ -27,7 +27,9 @@ app.add_middleware(
 s3 = boto3.client(
     's3',
     aws_access_key_id= os.getenv("AWS_ACCESS_KEY"),
-    aws_secret_access_key= os.getenv("AWS_SECRET_KEY"))
+    aws_secret_access_key= os.getenv("AWS_SECRET_KEY"),
+    region_name=os.getenv("AWS_REGION", "ap-south-1"))
+
 
 bucket_name = 'YOUR_BUCKET_NAME' # Add your bucket name here
 
